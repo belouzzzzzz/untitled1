@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 
 public class Base {
-    /** Метод запуска приложения */
     public static void main(String[] args) {
         System.out.println("Привет, сейчас мы с тобой займемся математикой");
         Scanner sc = new Scanner(System.in); // подключаем сканнер, создаем переменную сканнера "sc"
