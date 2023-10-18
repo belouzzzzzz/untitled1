@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 
 public class Base {
-    public static void main(String[] args) {
-        System.out.println("Привет, сейчас мы с тобой займемся математикой");
+    public static void main() {
         Scanner sc = new Scanner(System.in); // подключаем сканнер, создаем переменную сканнера "sc"
         System.out.println("Введи первое дробное число"); // выводим в консоль текст
         float a = sc.nextFloat(); // создаем переменную "а" типа float, записывем в нее значение первого числа из сканнера
@@ -39,6 +38,7 @@ public class Base {
         System.out.print(a + "" + act + "" + b + "="); // выводим в строку получившийся пример
         System.out.printf("%.4f", result); // ответ округляем до 4 символов после запятой
         sc.close(); // закрываем сканнер
-    }
-}
 
+    }
+
+}
