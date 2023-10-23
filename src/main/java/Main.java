@@ -16,5 +16,6 @@ public class Main {
         } else {
             Array.main();
         }
+        sc.close(); // закрываем сканнер
     }
 }
