@@ -21,22 +21,25 @@ public class ArrayMaxMin {
 
         int min = arr[0]; // создаем переменную для минимального положителного числа
         int max = arr[0]; // создаем переменную для максимального отрицательного числа
-
-        for (int i = 1; i < arr.length; i++) { // находим максимальный отрицательный элемент массива
-            if (arr[i] < max) {
+        int maxInd = 0;
+        int minInd = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < max && arr[i] < 0) { // находим максимальный отрицательный элемент массива
                 max = arr[i];
+                maxInd = i;
             }
 
-        }
-        for (int i = 1; i < arr.length; i++) { // находим минимальный положительный элемент массива
-            if (arr[i] >= 0 && arr[i] < min) { // вот тут не работает условие почему-то
+            if (arr[i] >= 0 && arr[i] > min) { // находим минимальный положительный элемент массива
                 min = arr[i];
+                minInd = i;
             }
         }
-
-
         System.out.println("Минимальный положительный элемент: " + min);
         System.out.println("Максимальный отрицательный элемент: " + max);
-
+        // переставляем элементы
+        int temp = arr[minInd]; // создаем временную переменную для перестановки элементов
+        arr[minInd] = arr[maxInd];
+        arr[maxInd] = temp;
+        System.out.println(Arrays.deepToString(new int[][]{arr}));
     }
 }
