@@ -1,3 +1,7 @@
+package Ex1and2;
+
+import Ex1and2.Base;
+
 import java.util.Scanner;
 
 /**
