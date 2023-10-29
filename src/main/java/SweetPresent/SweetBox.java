@@ -1,3 +1,5 @@
+package SweetPresent;
+
 public abstract class SweetBox {
    private String name;
    private Double weight;
