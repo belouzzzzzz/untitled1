@@ -7,7 +7,7 @@ import java.util.*;
 public class ReadFile {
     public static void main(String[] args) {
         // Создаем объект File, который ссылается на файл с текстом
-        File file = new File("txtFile.txt");
+        File file = new File("text.txt");
 
         // Создаем объект Scanner для чтения файла
         Scanner scanner = null;
