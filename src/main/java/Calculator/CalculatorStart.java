@@ -1,11 +1,13 @@
 /**
  * Класс CalculatorStart - содержит основную логику работы калькулятора
+ *
  * @author belousov
  * @version 1
  */
 
 package Calculator;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalculatorStart {
@@ -13,14 +15,49 @@ public class CalculatorStart {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-        System.out.println("Ввендите первое число: ");
-        double x = scanner.nextDouble();
+        boolean inputCorrectX = false;
+        boolean operationCorrect = false;
+        boolean inputCorrectY = false;
+        double x = 0;
+        double y = 0;
+        String operation = null;
 
-        System.out.println("Выберите тип операции (+,-,*,/): ");
-        String operation = scanner.next();
+        do {
+            try {
+                System.out.println("Введите первое число: ");
+                x = scanner.nextDouble();
+                inputCorrectX = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Ошибка ввода! Введите число.");
+                scanner.next();
+            }
+        } while (!inputCorrectX);
 
-        System.out.println("Введите второе число: ");
-        double y = scanner.nextDouble();
+        do {
+            try {
+                System.out.println("Выберите тип операции (+,-,*,/): ");
+                operation = scanner.next();
+                if (operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {
+                    operationCorrect = true;
+                } else {
+                    throw new InputMismatchException();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Ошибка ввода! Введите только один из символов: +,-,*,/");
+                scanner.next();
+            }
+        } while (!operationCorrect);
+
+        do {
+            try {
+                System.out.println("Введите второе число: ");
+                y = scanner.nextDouble();
+                inputCorrectY = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Ошибка ввода! Введите число.");
+                scanner.next();
+            }
+        } while (!inputCorrectY);
 
         double result = calculator.calculate(x, y, operation);
 
