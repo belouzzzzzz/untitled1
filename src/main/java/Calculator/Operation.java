@@ -5,7 +5,7 @@
  */
 package Calculator;
 
-abstract class Operation {
+public abstract class Operation {
     public abstract double calculate(double x, double y);
 }
 
