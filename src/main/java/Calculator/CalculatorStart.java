@@ -8,6 +8,7 @@
 package Calculator;
 
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class CalculatorStart {
@@ -40,9 +41,9 @@ public class CalculatorStart {
                 if (operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/")) {
                     operationCorrect = true;
                 } else {
-                    throw new InputMismatchException();
+                    throw new NoSuchElementException();
                 }
-            } catch (InputMismatchException e) {
+            } catch (NoSuchElementException e) {
                 System.out.println("Ошибка ввода! Введите только один из символов: +,-,*,/");
                 scanner.next();
             }

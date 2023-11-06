@@ -27,7 +27,7 @@ class Multiplication extends Operation {
 class Division extends Operation {
     public double calculate(double x, double y) {
       if (y == 0) {
-            System.out.println("На ноль делить нельзя");
+          throw new ArithmeticException("На ноль делить нельзя");
       }
         return x / y;
     }
